@@ -1,0 +1,5 @@
+SELECT time, a.sensor, a.units, a.value, b.sensor, b.units, b.value FROM measurements a
+INNER JOIN measurements b ON a.uuid = b.uuid AND a.time = b.time
+WHERE a.sensor = 'tmp' AND b.sensor = 'hum'
+ORDER BY uuid, time 
+
